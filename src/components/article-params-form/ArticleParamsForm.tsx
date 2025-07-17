@@ -18,6 +18,7 @@ import {
 	contentWidthArr,
 } from 'src/constants/articleProps';
 import clsx from 'clsx';
+import { useClose } from '../hooks/useClose';
 
 type FormProps = {
 	confirmSettings: (settings: ArticleStateType) => void;
@@ -74,6 +75,12 @@ export const ArticleParamsForm = ({ confirmSettings }: FormProps) => {
 		confirmSettings(defaultArticleState);
 		toggleForm();
 	};
+
+	useClose({
+		isOpen: formIsOpen,
+		close: () => setFormIsOpen(false),
+		ref: formRef,
+	});
 
 	return (
 		<>
