@@ -6,7 +6,6 @@ import {
 } from 'src/constants/articleProps';
 
 import styles from 'src/styles/index.module.scss';
-import clsx from 'clsx';
 import { CSSProperties, useState } from 'react';
 
 export const App = () => {
@@ -18,7 +17,7 @@ export const App = () => {
 
 	return (
 		<main
-			className={clsx(styles.main)}
+			className={styles.main}
 			style={
 				{
 					'--font-family': settings.fontFamilyOption.value,

@@ -89,7 +89,11 @@ export const ArticleParamsForm = ({ confirmSettings }: FormProps) => {
 				className={clsx(styles.container, {
 					[styles.container_open]: formIsOpen,
 				})}>
-				<form className={styles.form} onSubmit={handleSubmit} ref={formRef}>
+				<form
+					className={styles.form}
+					onSubmit={handleSubmit}
+					onReset={resetSettings}
+					ref={formRef}>
 					<Text as='h2' size={31} weight={800} uppercase>
 						Задайте параметры
 					</Text>
@@ -132,12 +136,7 @@ export const ArticleParamsForm = ({ confirmSettings }: FormProps) => {
 						onChange={handleContentWidth}
 					/>
 					<div className={styles.bottomContainer}>
-						<Button
-							title='Сбросить'
-							htmlType='reset'
-							type='clear'
-							onClick={resetSettings}
-						/>
+						<Button title='Сбросить' htmlType='reset' type='clear' />
 						<Button title='Применить' htmlType='submit' type='apply' />
 					</div>
 				</form>
